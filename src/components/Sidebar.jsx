@@ -16,9 +16,9 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ForumIcon from '@mui/icons-material/Forum';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-const Sidebar = () => {
+const Sidebar = ({mode, setMode}) => {
   return (
-    <Box 
+    <Box
       flex={1} 
       p={2}
       sx={{display: {xs: "none", sm: "block"}}}
@@ -94,8 +94,8 @@ const Sidebar = () => {
               <ListItemIcon>
                 <DarkModeIcon />
               </ListItemIcon>
-              <Switch defaultChecked />
-            </ListItemButton>
+              <Switch  onChange={e => setMode(mode === 'light' ? "dark" : "light")} />
+            </ListItemButton>  
           </ListItem>
         </List> 
       </Box>
